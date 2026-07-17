@@ -11,6 +11,20 @@ export default defineConfig({
     nitro({ 
       preset: "vercel"
     }),
+    {
+      name: 'force-inline-dynamic-imports',
+      enforce: 'post',
+      config(config, env) {
+        if (env.isSsrBuild) {
+          config.build ??= {};
+          config.build.rollupOptions ??= {};
+          config.build.rollupOptions.output = {
+            inlineDynamicImports: true
+          };
+          delete config.build.cssCodeSplit;
+        }
+      }
+    },
     react(),
     tailwindcss(),
     tsconfigPaths(),

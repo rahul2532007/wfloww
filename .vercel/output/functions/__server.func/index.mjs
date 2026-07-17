@@ -1,13 +1,3 @@
-
-import fs from 'fs';
-try {
-  console.log("DEBUG: CONTENTS OF /var/task");
-  console.log(fs.readdirSync('/var/task'));
-  console.log("DEBUG: CONTENTS OF /var/task/_ssr");
-  console.log(fs.readdirSync('/var/task/_ssr'));
-} catch (e) {
-  console.log("DEBUG ERROR:", e.message);
-}
 globalThis.__nitro_main__ = import.meta.url;
 import { a as NodeResponse, n as HTTPError, r as defineLazyEventHandler, t as H3Core } from "./_libs/h3+rou3+srvx.mjs";
 //#region #nitro-vite-setup

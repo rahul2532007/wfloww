@@ -1,1 +1,0 @@
-import{a as e,i as t}from"./index-C9-Ja8CO.js";function n(n,r,i){let a=t(n,i?.in);return isNaN(r)?e(i?.in||n,NaN):(r&&a.setDate(a.getDate()+r),a)}export{n as t};

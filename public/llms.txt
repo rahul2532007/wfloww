@@ -1,0 +1,21 @@
+# Qfloww
+
+> Qfloww provides branded booking pages and queue-management panels for clinics, salons, and consulting firms.
+
+Qfloww lets a business publish a `/book/{business-name}` URL, accept appointments,
+run a daily queue, and manage services and slots. Business owners, invited doctors,
+and platform administrators have separate panels.
+
+## Pages
+
+- [Home](/): Product overview.
+- [Book](/book/example): Tenant booking page.
+- [Sign up](/signup): Create a business account.
+- [Log in](/login): Owner, doctor, and admin sign-in.
+- [Contact](/contact): Qfloww contact information.
+
+## Contact
+
+- Email: contact@pridemarketing.co.in
+- Phone: +91 8349021100
+- WhatsApp: https://wa.me/918349021100/

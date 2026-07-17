@@ -1,0 +1,212 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Qfloww — editorial minimalist design system (ported from Pride Digital).
+ * Brand tokens (--ink, --paper, --amber, --rule, --warm-*) map to
+ * shadcn semantic tokens via @theme inline below.
+ * Never hardcode hex/tailwind color classes in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-amber: var(--amber);
+  --color-rule: var(--rule);
+  --color-warm-1: var(--warm-1);
+  --color-warm-2: var(--warm-2);
+  --color-warm-3: var(--warm-3);
+  --color-warm-4: var(--warm-4);
+  --color-warm-5: var(--warm-5);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "General Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand */
+  --ink: oklch(0.16 0.005 60);
+  --paper: oklch(0.985 0.005 90);
+  --amber: oklch(0.58 0.13 55);
+  --rule: oklch(0.88 0.008 80);
+  --warm-1: oklch(0.97 0.006 85);
+  --warm-2: oklch(0.92 0.008 80);
+  --warm-3: oklch(0.78 0.012 75);
+  --warm-4: oklch(0.46 0.012 70);
+  --warm-5: oklch(0.32 0.008 65);
+
+  /* shadcn semantic, mapped to brand */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--warm-1);
+  --secondary-foreground: var(--ink);
+  --muted: var(--warm-1);
+  --muted-foreground: var(--warm-4);
+  --accent: var(--amber);
+  --accent-foreground: var(--paper);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: var(--paper);
+  --border: var(--rule);
+  --input: var(--rule);
+  --ring: var(--warm-3);
+}
+
+.dark {
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: oklch(0.2 0.005 60);
+  --card-foreground: var(--paper);
+  --popover: oklch(0.2 0.005 60);
+  --popover-foreground: var(--paper);
+  --primary: var(--paper);
+  --primary-foreground: var(--ink);
+  --secondary: oklch(0.24 0.005 60);
+  --secondary-foreground: var(--paper);
+  --muted: oklch(0.24 0.005 60);
+  --muted-foreground: var(--warm-3);
+  --accent: var(--amber);
+  --accent-foreground: var(--paper);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--warm-4);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+.font-serif-display { font-family: var(--font-serif); letter-spacing: -0.01em; }
+
+.rule { border-color: var(--rule); }
+.hairline { border-top: 1px solid var(--rule); }
+
+@utility section-marker {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-4);
+  font-weight: 500;
+}
+
+@utility brand-dot {
+  color: var(--amber);
+}
+
+@utility geo-marquee {
+  animation: geo-marquee 40s linear infinite;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@keyframes geo-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@utility fade-up {
+  animation: fade-up 600ms cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Route enter — a very short opacity/translate on <main> children */
+@keyframes route-enter {
+  from { opacity: 0; transform: translate3d(0, 6px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+main > * {
+  animation: route-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lift {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 250ms ease,
+              border-color 250ms ease,
+              color 250ms ease;
+  will-change: transform;
+}
+.lift:hover { transform: translate3d(0, -2px, 0); }
+
+.link-sweep { position: relative; display: inline-block; }
+.link-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-sweep:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.group:hover [data-arrow] { transform: translate3d(3px, -3px, 0); }
+[data-arrow] { transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1); display: inline-block; }
+
+@media (prefers-reduced-motion: reduce) {
+  main > *,
+  .lift,
+  .link-sweep::after,
+  [data-arrow],
+  .geo-marquee { animation: none !important; transition: none !important; transform: none !important; }
+}
+

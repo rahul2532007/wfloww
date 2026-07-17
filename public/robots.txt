@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /management
+Disallow: /bootstrap-admin
+Disallow: /login
+
+Sitemap: https://qfloww.pridemarketing.co.in/sitemap.xml

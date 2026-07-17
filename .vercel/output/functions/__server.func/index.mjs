@@ -1,50 +1,13 @@
-import "./_ssr/admin-Dh0lgqzt.mjs";
-import "./_ssr/admin.functions-Bq_E3KiE.mjs";
-import "./_ssr/admin.functions-CzZYrp7Z.mjs";
-import "./_ssr/auth-middleware-Bqw2EDqt.mjs";
-import "./_ssr/blog.virtual-vs-physical-queues-bX5fK-_x.mjs";
-import "./_ssr/book._slug-CerCcb8Z.mjs";
-import "./_ssr/book._slug-COsGbYb1.mjs";
-import "./_ssr/booking.functions-DT9aCuC9.mjs";
-import "./_ssr/bootstrap-admin-BS1UXwrj.mjs";
-import "./_ssr/button-BkEeRci-.mjs";
-import "./_ssr/client-Bhtv0S6U.mjs";
-import "./_ssr/client.server-BiUsLbOd.mjs";
-import "./_ssr/contact-B1oEZySW.mjs";
-import "./_ssr/createServerRpc-WJgk8O8C.mjs";
-import "./_ssr/createSsrRpc-Dz5tyi6U.mjs";
-import "./_ssr/createStart-Dt05N14y.mjs";
-import "./_ssr/currency-2G69NBBN.mjs";
-import "./_ssr/dialog-B07s1N2n.mjs";
-import "./_ssr/doctor-C6PcQ8sR.mjs";
-import "./_ssr/doctor-invite.accept-BJEn8UN0.mjs";
-import "./_ssr/doctor-Xt1QokU6.mjs";
-import "./_ssr/doctor.functions-BrInmMR4.mjs";
-import "./_ssr/empty-plugin-adapters-D9UWiqvJ.mjs";
-import "./_ssr/esm-Dova13aH.mjs";
-import "./_ssr/forgot-password-DY9kq2cV.mjs";
-import "./_ssr/login-gccVF5Nv.mjs";
-import "./_ssr/management-B7nin2qD.mjs";
-import "./_ssr/management.index-DmnvlkBt.mjs";
-import "./_ssr/pending-activation-BTzRgNvZ.mjs";
-import "./_ssr/plan-3nosrRGP.mjs";
-import "./_ssr/primitives-Dd79A7HO.mjs";
-import "./_ssr/privacy-D85XH_QI.mjs";
-import "./_ssr/request-response-BEPp1C2k.mjs";
-import "./_ssr/reset-password-B45VHdSd.mjs";
-import "./_ssr/route-88dck68P.mjs";
-import "./_ssr/router-CDPdXstM.mjs";
-import "./_ssr/routes-zIljdq0R.mjs";
-import "./_ssr/send-server-Cb1XHhwj.mjs";
-import "./_ssr/server-ZG3U3TxI.mjs";
-import "./_ssr/signup-DOOIawy7.mjs";
-import "./_ssr/ssr.mjs";
-import "./_ssr/staff-nav-DQC8uIhQ.mjs";
-import "./_ssr/start-D2yO1OE2.mjs";
-import "./_ssr/terms-BoDagqLI.mjs";
-import "./_ssr/use-auth-qV7dSXZN.mjs";
-import "./_ssr/utils-C_uf36nf.mjs";
-import "./_ssr/virtual-queue-guide-4xz2VT1b.mjs";
+
+import fs from 'fs';
+try {
+  console.log("DEBUG: CONTENTS OF /var/task");
+  console.log(fs.readdirSync('/var/task'));
+  console.log("DEBUG: CONTENTS OF /var/task/_ssr");
+  console.log(fs.readdirSync('/var/task/_ssr'));
+} catch (e) {
+  console.log("DEBUG ERROR:", e.message);
+}
 globalThis.__nitro_main__ = import.meta.url;
 import { a as NodeResponse, n as HTTPError, r as defineLazyEventHandler, t as H3Core } from "./_libs/h3+rou3+srvx.mjs";
 //#region #nitro-vite-setup

@@ -9,10 +9,7 @@ export default defineConfig({
   plugins: [
     tanstackStart({ server: { entry: "server" } }),
     nitro({ 
-      preset: "vercel",
-      externals: {
-        traceInclude: ["./.vercel/output/functions/__server.func/_ssr/**/*.mjs"]
-      }
+      preset: "vercel"
     }),
     react(),
     tailwindcss(),

@@ -1,547 +1,525 @@
 // Generated from the linked Supabase project. Regenerate after schema changes with:
 // supabase gen types typescript --linked --schema public > src/integrations/supabase/types.ts
 
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[]
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
-  }
+    PostgrestVersion: "14.5";
+  };
   public: {
     Tables: {
       activation_requests: {
         Row: {
-          admin_note: string | null
-          business_id: string
-          created_at: string
-          id: string
-          message: string | null
-          requested_by: string
-          status: string
-          updated_at: string
-        }
+          admin_note: string | null;
+          business_id: string;
+          created_at: string;
+          id: string;
+          message: string | null;
+          requested_by: string;
+          status: string;
+          updated_at: string;
+        };
         Insert: {
-          admin_note?: string | null
-          business_id: string
-          created_at?: string
-          id?: string
-          message?: string | null
-          requested_by: string
-          status?: string
-          updated_at?: string
-        }
+          admin_note?: string | null;
+          business_id: string;
+          created_at?: string;
+          id?: string;
+          message?: string | null;
+          requested_by: string;
+          status?: string;
+          updated_at?: string;
+        };
         Update: {
-          admin_note?: string | null
-          business_id?: string
-          created_at?: string
-          id?: string
-          message?: string | null
-          requested_by?: string
-          status?: string
-          updated_at?: string
-        }
+          admin_note?: string | null;
+          business_id?: string;
+          created_at?: string;
+          id?: string;
+          message?: string | null;
+          requested_by?: string;
+          status?: string;
+          updated_at?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "activation_requests_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "activation_requests_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
-        ]
-      }
+        ];
+      };
       bookings: {
         Row: {
-          amount_paid: number | null
-          business_id: string
-          client_email: string | null
-          client_name: string
-          client_phone: string
-          created_at: string
-          date: string
-          id: string
-          is_walkin: boolean
-          notes: string | null
-          payment_method: string | null
-          service_id: string | null
-          slot_id: string | null
-          status: Database["public"]["Enums"]["booking_status"]
-          token_number: number
-          updated_at: string
-        }
+          amount_paid: number | null;
+          business_id: string;
+          client_email: string | null;
+          client_name: string;
+          client_phone: string;
+          created_at: string;
+          date: string;
+          id: string;
+          is_walkin: boolean;
+          notes: string | null;
+          payment_method: string | null;
+          service_id: string | null;
+          slot_id: string | null;
+          status: Database["public"]["Enums"]["booking_status"];
+          token_number: number;
+          updated_at: string;
+        };
         Insert: {
-          amount_paid?: number | null
-          business_id: string
-          client_email?: string | null
-          client_name: string
-          client_phone: string
-          created_at?: string
-          date: string
-          id?: string
-          is_walkin?: boolean
-          notes?: string | null
-          payment_method?: string | null
-          service_id?: string | null
-          slot_id?: string | null
-          status?: Database["public"]["Enums"]["booking_status"]
-          token_number: number
-          updated_at?: string
-        }
+          amount_paid?: number | null;
+          business_id: string;
+          client_email?: string | null;
+          client_name: string;
+          client_phone: string;
+          created_at?: string;
+          date: string;
+          id?: string;
+          is_walkin?: boolean;
+          notes?: string | null;
+          payment_method?: string | null;
+          service_id?: string | null;
+          slot_id?: string | null;
+          status?: Database["public"]["Enums"]["booking_status"];
+          token_number: number;
+          updated_at?: string;
+        };
         Update: {
-          amount_paid?: number | null
-          business_id?: string
-          client_email?: string | null
-          client_name?: string
-          client_phone?: string
-          created_at?: string
-          date?: string
-          id?: string
-          is_walkin?: boolean
-          notes?: string | null
-          payment_method?: string | null
-          service_id?: string | null
-          slot_id?: string | null
-          status?: Database["public"]["Enums"]["booking_status"]
-          token_number?: number
-          updated_at?: string
-        }
+          amount_paid?: number | null;
+          business_id?: string;
+          client_email?: string | null;
+          client_name?: string;
+          client_phone?: string;
+          created_at?: string;
+          date?: string;
+          id?: string;
+          is_walkin?: boolean;
+          notes?: string | null;
+          payment_method?: string | null;
+          service_id?: string | null;
+          slot_id?: string | null;
+          status?: Database["public"]["Enums"]["booking_status"];
+          token_number?: number;
+          updated_at?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "bookings_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "bookings_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
           {
-            foreignKeyName: "bookings_service_id_fkey"
-            columns: ["service_id"]
-            isOneToOne: false
-            referencedRelation: "services"
-            referencedColumns: ["id"]
+            foreignKeyName: "bookings_service_id_fkey";
+            columns: ["service_id"];
+            isOneToOne: false;
+            referencedRelation: "services";
+            referencedColumns: ["id"];
           },
           {
-            foreignKeyName: "bookings_slot_id_fkey"
-            columns: ["slot_id"]
-            isOneToOne: false
-            referencedRelation: "slots"
-            referencedColumns: ["id"]
+            foreignKeyName: "bookings_slot_id_fkey";
+            columns: ["slot_id"];
+            isOneToOne: false;
+            referencedRelation: "slots";
+            referencedColumns: ["id"];
           },
-        ]
-      }
+        ];
+      };
       businesses: {
         Row: {
-          activated_at: string | null
-          contact_email: string | null
-          contact_phone: string | null
-          created_at: string
-          currency: string
-          expires_at: string | null
-          id: string
-          is_active: boolean
-          manual_lock: boolean
-          name: string
-          owner_user_id: string | null
-          plan: Database["public"]["Enums"]["plan_type"]
-          plan_start: string
-          slug: string
-          type: Database["public"]["Enums"]["business_type"]
-          updated_at: string
-        }
+          activated_at: string | null;
+          contact_email: string | null;
+          contact_phone: string | null;
+          created_at: string;
+          currency: string;
+          expires_at: string | null;
+          id: string;
+          is_active: boolean;
+          manual_lock: boolean;
+          name: string;
+          owner_user_id: string | null;
+          plan: Database["public"]["Enums"]["plan_type"];
+          plan_start: string;
+          slug: string;
+          type: Database["public"]["Enums"]["business_type"];
+          updated_at: string;
+        };
         Insert: {
-          activated_at?: string | null
-          contact_email?: string | null
-          contact_phone?: string | null
-          created_at?: string
-          currency?: string
-          expires_at?: string | null
-          id?: string
-          is_active?: boolean
-          manual_lock?: boolean
-          name: string
-          owner_user_id?: string | null
-          plan?: Database["public"]["Enums"]["plan_type"]
-          plan_start?: string
-          slug: string
-          type: Database["public"]["Enums"]["business_type"]
-          updated_at?: string
-        }
+          activated_at?: string | null;
+          contact_email?: string | null;
+          contact_phone?: string | null;
+          created_at?: string;
+          currency?: string;
+          expires_at?: string | null;
+          id?: string;
+          is_active?: boolean;
+          manual_lock?: boolean;
+          name: string;
+          owner_user_id?: string | null;
+          plan?: Database["public"]["Enums"]["plan_type"];
+          plan_start?: string;
+          slug: string;
+          type: Database["public"]["Enums"]["business_type"];
+          updated_at?: string;
+        };
         Update: {
-          activated_at?: string | null
-          contact_email?: string | null
-          contact_phone?: string | null
-          created_at?: string
-          currency?: string
-          expires_at?: string | null
-          id?: string
-          is_active?: boolean
-          manual_lock?: boolean
-          name?: string
-          owner_user_id?: string | null
-          plan?: Database["public"]["Enums"]["plan_type"]
-          plan_start?: string
-          slug?: string
-          type?: Database["public"]["Enums"]["business_type"]
-          updated_at?: string
-        }
-        Relationships: []
-      }
+          activated_at?: string | null;
+          contact_email?: string | null;
+          contact_phone?: string | null;
+          created_at?: string;
+          currency?: string;
+          expires_at?: string | null;
+          id?: string;
+          is_active?: boolean;
+          manual_lock?: boolean;
+          name?: string;
+          owner_user_id?: string | null;
+          plan?: Database["public"]["Enums"]["plan_type"];
+          plan_start?: string;
+          slug?: string;
+          type?: Database["public"]["Enums"]["business_type"];
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       doctor_invites: {
         Row: {
-          accepted_user_id: string | null
-          business_id: string
-          created_at: string
-          email: string
-          expires_at: string
-          id: string
-          invited_by: string | null
-          status: string
-          token: string
-          updated_at: string
-        }
+          accepted_user_id: string | null;
+          business_id: string;
+          created_at: string;
+          email: string;
+          expires_at: string;
+          id: string;
+          invited_by: string | null;
+          status: string;
+          token: string;
+          updated_at: string;
+        };
         Insert: {
-          accepted_user_id?: string | null
-          business_id: string
-          created_at?: string
-          email: string
-          expires_at?: string
-          id?: string
-          invited_by?: string | null
-          status?: string
-          token?: string
-          updated_at?: string
-        }
+          accepted_user_id?: string | null;
+          business_id: string;
+          created_at?: string;
+          email: string;
+          expires_at?: string;
+          id?: string;
+          invited_by?: string | null;
+          status?: string;
+          token?: string;
+          updated_at?: string;
+        };
         Update: {
-          accepted_user_id?: string | null
-          business_id?: string
-          created_at?: string
-          email?: string
-          expires_at?: string
-          id?: string
-          invited_by?: string | null
-          status?: string
-          token?: string
-          updated_at?: string
-        }
+          accepted_user_id?: string | null;
+          business_id?: string;
+          created_at?: string;
+          email?: string;
+          expires_at?: string;
+          id?: string;
+          invited_by?: string | null;
+          status?: string;
+          token?: string;
+          updated_at?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "doctor_invites_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "doctor_invites_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
-        ]
-      }
+        ];
+      };
       profiles: {
         Row: {
-          created_at: string
-          display_name: string | null
-          email: string | null
-          id: string
-          updated_at: string
-        }
+          created_at: string;
+          display_name: string | null;
+          email: string | null;
+          id: string;
+          updated_at: string;
+        };
         Insert: {
-          created_at?: string
-          display_name?: string | null
-          email?: string | null
-          id: string
-          updated_at?: string
-        }
+          created_at?: string;
+          display_name?: string | null;
+          email?: string | null;
+          id: string;
+          updated_at?: string;
+        };
         Update: {
-          created_at?: string
-          display_name?: string | null
-          email?: string | null
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
+          created_at?: string;
+          display_name?: string | null;
+          email?: string | null;
+          id?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       services: {
         Row: {
-          business_id: string
-          created_at: string
-          id: string
-          is_active: boolean
-          name: string
-        }
+          business_id: string;
+          created_at: string;
+          id: string;
+          is_active: boolean;
+          name: string;
+        };
         Insert: {
-          business_id: string
-          created_at?: string
-          id?: string
-          is_active?: boolean
-          name: string
-        }
+          business_id: string;
+          created_at?: string;
+          id?: string;
+          is_active?: boolean;
+          name: string;
+        };
         Update: {
-          business_id?: string
-          created_at?: string
-          id?: string
-          is_active?: boolean
-          name?: string
-        }
+          business_id?: string;
+          created_at?: string;
+          id?: string;
+          is_active?: boolean;
+          name?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "services_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "services_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
-        ]
-      }
+        ];
+      };
       slots: {
         Row: {
-          business_id: string
-          created_at: string
-          day_of_week: number
-          days_of_week: Json
-          end_time: string
-          id: string
-          is_active: boolean
-          max_capacity: number
-          name: string
-          start_time: string
-        }
+          business_id: string;
+          created_at: string;
+          day_of_week: number;
+          days_of_week: Json;
+          end_time: string;
+          id: string;
+          is_active: boolean;
+          max_capacity: number;
+          name: string;
+          start_time: string;
+        };
         Insert: {
-          business_id: string
-          created_at?: string
-          day_of_week: number
-          days_of_week?: Json
-          end_time: string
-          id?: string
-          is_active?: boolean
-          max_capacity?: number
-          name: string
-          start_time: string
-        }
+          business_id: string;
+          created_at?: string;
+          day_of_week: number;
+          days_of_week?: Json;
+          end_time: string;
+          id?: string;
+          is_active?: boolean;
+          max_capacity?: number;
+          name: string;
+          start_time: string;
+        };
         Update: {
-          business_id?: string
-          created_at?: string
-          day_of_week?: number
-          days_of_week?: Json
-          end_time?: string
-          id?: string
-          is_active?: boolean
-          max_capacity?: number
-          name?: string
-          start_time?: string
-        }
+          business_id?: string;
+          created_at?: string;
+          day_of_week?: number;
+          days_of_week?: Json;
+          end_time?: string;
+          id?: string;
+          is_active?: boolean;
+          max_capacity?: number;
+          name?: string;
+          start_time?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "slots_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "slots_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
-        ]
-      }
+        ];
+      };
       user_roles: {
         Row: {
-          business_id: string | null
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
+          business_id: string | null;
+          id: string;
+          role: Database["public"]["Enums"]["app_role"];
+          user_id: string;
+        };
         Insert: {
-          business_id?: string | null
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
+          business_id?: string | null;
+          id?: string;
+          role: Database["public"]["Enums"]["app_role"];
+          user_id: string;
+        };
         Update: {
-          business_id?: string | null
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
+          business_id?: string | null;
+          id?: string;
+          role?: Database["public"]["Enums"]["app_role"];
+          user_id?: string;
+        };
         Relationships: [
           {
-            foreignKeyName: "user_roles_business_id_fkey"
-            columns: ["business_id"]
-            isOneToOne: false
-            referencedRelation: "businesses"
-            referencedColumns: ["id"]
+            foreignKeyName: "user_roles_business_id_fkey";
+            columns: ["business_id"];
+            isOneToOne: false;
+            referencedRelation: "businesses";
+            referencedColumns: ["id"];
           },
-        ]
-      }
-    }
+        ];
+      };
+    };
     Views: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Functions: {
       accept_doctor_invite: {
-        Args: { _display_name: string; _token: string }
-        Returns: string
-      }
+        Args: { _display_name: string; _token: string };
+        Returns: string;
+      };
       get_doctor_invite_by_token: {
-        Args: { _token: string }
+        Args: { _token: string };
         Returns: {
-          business_name: string
-          email: string
-          expires_at: string
-          status: string
-        }[]
-      }
-    }
+          business_name: string;
+          email: string;
+          expires_at: string;
+          status: string;
+        }[];
+      };
+    };
     Enums: {
-      app_role: "reception" | "management" | "admin" | "doctor"
-      booking_status:
-        | "booked"
-        | "arrived"
-        | "ongoing"
-        | "completed"
-        | "no_show"
-        | "cancelled"
-      business_type: "clinic" | "salon" | "consulting"
-      plan_type: "trial" | "monthly" | "yearly"
-    }
+      app_role: "reception" | "management" | "admin" | "doctor";
+      booking_status: "booked" | "arrived" | "ongoing" | "completed" | "no_show" | "cancelled";
+      business_type: "clinic" | "salon" | "consulting";
+      plan_type: "trial" | "monthly" | "yearly";
+    };
     CompositeTypes: {
-      [_ in never]: never
-    }
-  }
-}
+      [_ in never]: never;
+    };
+  };
+};
 
-type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">;
 
-type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">];
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
   ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
       DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
-      Row: infer R
+      Row: infer R;
     }
     ? R
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])
-    ? (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
-        Row: infer R
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+    ? (DefaultSchema["Tables"] & DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
+        Row: infer R;
       }
       ? R
       : never
-    : never
+    : never;
 
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
   ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Insert: infer I
+      Insert: infer I;
     }
     ? I
     : never
   : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
     ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Insert: infer I
+        Insert: infer I;
       }
       ? I
       : never
-    : never
+    : never;
 
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
   ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Update: infer U
+      Update: infer U;
     }
     ? U
     : never
   : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
     ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Update: infer U
+        Update: infer U;
       }
       ? U
       : never
-    : never
+    : never;
 
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
     : never = never,
 > = DefaultSchemaEnumNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
   ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
     ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
-    : never
+    : never;
 
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
     : never = never,
 > = PublicCompositeTypeNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
   ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
   : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
-    : never
+    : never;
 
 export const Constants = {
   public: {
     Enums: {
       app_role: ["reception", "management", "admin", "doctor"],
-      booking_status: [
-        "booked",
-        "arrived",
-        "ongoing",
-        "completed",
-        "no_show",
-        "cancelled",
-      ],
+      booking_status: ["booked", "arrived", "ongoing", "completed", "no_show", "cancelled"],
       business_type: ["clinic", "salon", "consulting"],
       plan_type: ["trial", "monthly", "yearly"],
     },
   },
-} as const
-
+} as const;
